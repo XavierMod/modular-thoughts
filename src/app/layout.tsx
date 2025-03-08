@@ -10,7 +10,6 @@ import MainLayout from "@/components/MainLayout";
 import { getAllPosts } from "@/utils/posts";
 import "highlight.js/styles/qtcreator-dark.css";
 import StyledComponentsRegistry from "@/utils/registry";
-import Head from "next/head";
 
 const inter = Inter({
   variable: "--font-inter",
