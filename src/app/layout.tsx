@@ -10,7 +10,8 @@ import MainLayout from "@/components/MainLayout";
 import { getAllPosts } from "@/utils/posts";
 import "highlight.js/styles/qtcreator-dark.css";
 import StyledComponentsRegistry from "@/utils/registry";
-import ogImage from "./opengraph-image.png";
+import ogImage from "./og-image.png";
+import ogImageSquare from "./og-image-square.png";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -43,8 +44,13 @@ export const metadata: Metadata = {
     images: [
       {
         url: ogImage.src,
-        width: ogImage.width,
-        height: ogImage.height,
+        width: 1200,
+        height: 630,
+      },
+      {
+        url: ogImageSquare.src,
+        width: 400,
+        height: 400,
       },
     ],
   },
@@ -52,8 +58,13 @@ export const metadata: Metadata = {
     images: [
       {
         url: ogImage.src,
-        width: ogImage.width,
-        height: ogImage.height,
+        width: 1200,
+        height: 630,
+      },
+      {
+        url: ogImageSquare.src,
+        width: 400,
+        height: 400,
       },
     ],
   },
