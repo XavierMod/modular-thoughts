@@ -11,23 +11,27 @@ export const sizes: Sizes = {
   maxWidth: `1226`,
 };
 
+// Define the type for the media query function
+interface MediaQueryFunction {
+  (...args: Parameters<typeof css>): ReturnType<typeof css>;
+}
+
 interface MediaFunc {
-  [key: string]: (...args) => ReturnType<typeof css>;
+  [key: string]: MediaQueryFunction;
 }
 
 // iterate through the sizes and create a media template
 export const smallerThan: MediaFunc = Object.keys(sizes).reduce(
   (accumulator: MediaFunc, label: string) => {
-    // use em in breakpoints to work properly cross-browser and support users
-    // changing their browsers font-size: https://zellwk.com/blog/media-query-units/
     const emSize: number = parseInt(sizes[label]) / 16;
     const newAcc: MediaFunc = { ...accumulator };
-    newAcc[label] = (...args): ReturnType<typeof css> => css`
+    newAcc[label] = (
+      ...args: Parameters<typeof css>
+    ): ReturnType<typeof css> => css`
       @media screen and (max-width: ${emSize}em) {
         ${css(args)}
       }
     `;
-
     return newAcc;
   },
   {}
@@ -35,16 +39,15 @@ export const smallerThan: MediaFunc = Object.keys(sizes).reduce(
 
 export const largerThan: MediaFunc = Object.keys(sizes).reduce(
   (accumulator: MediaFunc, label: string) => {
-    // use em in breakpoints to work properly cross-browser and support users
-    // changing their browsers font-size: https://zellwk.com/blog/media-query-units/
     const emSize: number = parseInt(sizes[label]) / 16;
     const newAcc: MediaFunc = { ...accumulator };
-    newAcc[label] = (...args: any[]): ReturnType<typeof css> => css`
+    newAcc[label] = (
+      ...args: Parameters<typeof css>
+    ): ReturnType<typeof css> => css`
       @media screen and (min-width: ${emSize}em) {
-        ${css(args as any)}
+        ${css(args)}
       }
     `;
-
     return newAcc;
   },
   {}
@@ -52,9 +55,9 @@ export const largerThan: MediaFunc = Object.keys(sizes).reduce(
 
 export const smallerThanRes = (res: number) => {
   const emSize: number = res / 16;
-  return (...args: any[]): ReturnType<typeof css> => css`
+  return (...args: Parameters<typeof css>): ReturnType<typeof css> => css`
     @media screen and (max-width: ${emSize}em) {
-      ${css(args as any)}
+      ${css(args)}
     }
   `;
 };
