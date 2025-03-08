@@ -10,6 +10,7 @@ import MainLayout from "@/components/MainLayout";
 import { getAllPosts } from "@/utils/posts";
 import "highlight.js/styles/qtcreator-dark.css";
 import StyledComponentsRegistry from "@/utils/registry";
+import ogImage from "./opengraph-image.png";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -37,8 +38,24 @@ export const metadata: Metadata = {
   title: "Modular Thoughts",
   description:
     "Modular Thoughts is a blog on software, tech and philosophy written by Xavier Mod",
+  metadataBase: new URL("https://www.xaviermod.com"),
   openGraph: {
-    images: ["meta-image.png"],
+    images: [
+      {
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
+      },
+    ],
+  },
+  twitter: {
+    images: [
+      {
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
+      },
+    ],
   },
 };
 
