@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import { css, CSSObject, Interpolation } from "styled-components";
 
 interface Sizes {
   [key: string]: string;
@@ -12,9 +12,10 @@ export const sizes: Sizes = {
 };
 
 // Define the type for the media query function
-interface MediaQueryFunction {
-  (...args: Parameters<typeof css>): ReturnType<typeof css>;
-}
+type MediaQueryFunction = (
+  styles: TemplateStringsArray | CSSObject,
+  ...interpolations: unknown[]
+) => ReturnType<typeof css>;
 
 interface MediaFunc {
   [key: string]: MediaQueryFunction;
@@ -26,10 +27,11 @@ export const smallerThan: MediaFunc = Object.keys(sizes).reduce(
     const emSize: number = parseInt(sizes[label]) / 16;
     const newAcc: MediaFunc = { ...accumulator };
     newAcc[label] = (
-      ...args: Parameters<typeof css>
+      styles: TemplateStringsArray | CSSObject,
+      ...interpolations
     ): ReturnType<typeof css> => css`
       @media screen and (max-width: ${emSize}em) {
-        ${css(args)}
+        ${css(styles, ...(interpolations as Array<Interpolation<object>>))}
       }
     `;
     return newAcc;
@@ -42,10 +44,11 @@ export const largerThan: MediaFunc = Object.keys(sizes).reduce(
     const emSize: number = parseInt(sizes[label]) / 16;
     const newAcc: MediaFunc = { ...accumulator };
     newAcc[label] = (
-      ...args: Parameters<typeof css>
+      styles: TemplateStringsArray | CSSObject,
+      ...interpolations
     ): ReturnType<typeof css> => css`
       @media screen and (min-width: ${emSize}em) {
-        ${css(args)}
+        ${css(styles, ...(interpolations as Array<Interpolation<object>>))}
       }
     `;
     return newAcc;
@@ -55,9 +58,12 @@ export const largerThan: MediaFunc = Object.keys(sizes).reduce(
 
 export const smallerThanRes = (res: number) => {
   const emSize: number = res / 16;
-  return (...args: Parameters<typeof css>): ReturnType<typeof css> => css`
+  return (
+    styles: TemplateStringsArray | CSSObject,
+    ...interpolations: Interpolation<object>[]
+  ): ReturnType<typeof css> => css`
     @media screen and (max-width: ${emSize}em) {
-      ${css(args)}
+      ${css(styles, ...(interpolations as Array<Interpolation<object>>))}
     }
   `;
 };
