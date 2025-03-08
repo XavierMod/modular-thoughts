@@ -7,5 +7,5 @@ export function trimText(text: string, wordLimit: number = 30): string {
 }
 
 export function relativeTime(dateString: string) {
-  return moment(dateString, "MM/DD/YYYY").fromNow();
+  return moment(dateString, "DD/MM/YYYY").fromNow();
 }
