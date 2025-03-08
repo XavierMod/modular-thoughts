@@ -6,7 +6,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     // Allows customizing built-in components, e.g. to add styling.
     h1: ({ children }) => <h1>{children}</h1>,
-    a: ({ children }) => <Link>{children}</Link>,
+    a: (props) => <Link href={props.href}>{props.children}</Link>,
     img: (props) => (
       <div
         style={{

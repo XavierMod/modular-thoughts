@@ -52,12 +52,15 @@ const NavBar = styled.div`
 
 const Content = styled.div`
   flex: 1;
+  display: flex;
+  flex-direction: column;
   background: #181a1c;
   margin-top: 3rem;
   border: 2px dashed rgba(255, 255, 255, 0.2);
   border-top-left-radius: 1rem;
   padding: 3rem;
   overflow-y: scroll;
+  gap: 2rem;
 
   /* Hide scrollbar for Chrome, Safari and Opera */
   &::-webkit-scrollbar {
@@ -74,6 +77,11 @@ const Content = styled.div`
     margin-top: 0;
     border: 0;
     padding: 1rem;
+
+    h1 {
+      font-size: 2rem;
+      margin-top: 1rem;
+    }
   `}
 `;
 

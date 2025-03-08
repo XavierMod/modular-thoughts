@@ -26,9 +26,11 @@ body {
   margin: 0;
 }
 
-p {
+p, li {
   font-family: var(--font-crimson);
   font-size: 1.3rem;
+    line-height: 2rem;
+
 }
 
 * {

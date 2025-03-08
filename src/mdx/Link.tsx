@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
@@ -14,8 +15,12 @@ const Wrapper = styled.a`
   }
 `;
 
-const Link = (props: { children: React.ReactNode }) => {
-  return <Wrapper>{props.children}</Wrapper>;
+const DefaultLink = (props: { children: React.ReactNode; href: string }) => {
+  return (
+    <Link href={props.href} target="_blank">
+      <Wrapper>{props.children}</Wrapper>
+    </Link>
+  );
 };
 
-export default Link;
+export default DefaultLink;

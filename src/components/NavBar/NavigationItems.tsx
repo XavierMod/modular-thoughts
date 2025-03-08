@@ -20,6 +20,7 @@ const Wrapper = styled.div`
   li {
     opacity: 0.8;
     font-size: 1.1rem;
+    line-height: 1.2rem;
 
     &.active {
       font-weight: bold;

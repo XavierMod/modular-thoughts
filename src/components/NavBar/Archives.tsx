@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   }
 
   ul {
-    list-style-type: circle;
+    list-style-type: none;
     padding: auto !important;
     display: flex;
     flex-direction: column;
@@ -25,7 +25,7 @@ const Wrapper = styled.div`
       text-decoration: underline;
       max-width: 250px;
       opacity: 0.5;
-      font-size: 0.9rem;
+      font-size: 1rem;
       line-height: 1.5rem;
       margin-left: 1rem;
 

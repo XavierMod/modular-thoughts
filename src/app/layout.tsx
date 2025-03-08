@@ -9,6 +9,7 @@ import "./globals.css";
 import MainLayout from "@/components/MainLayout";
 import { getAllPosts } from "@/utils/posts";
 import "highlight.js/styles/qtcreator-dark.css";
+import StyledComponentsRegistry from "@/utils/registry";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -49,7 +50,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${pixelifySans.variable} ${londrinaSolid.variable} ${crimson.variable}`}
       >
-        <MainLayout posts={posts}>{children}</MainLayout>
+        <StyledComponentsRegistry>
+          <MainLayout posts={posts}>{children}</MainLayout>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
