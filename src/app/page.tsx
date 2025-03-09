@@ -85,6 +85,9 @@ export default function Home() {
                   {relativeTime(post.date)}
                 </span>
                 <span className="font-secondary">{post.category}</span>
+                <span className="font-secondary">
+                  {post.length} minute read
+                </span>
               </Header>
               <h3>{post.title}</h3>
               <ImageWrapper>

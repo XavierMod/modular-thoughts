@@ -11,12 +11,16 @@ export interface PostMeta {
   description: string;
   category: string;
   image: string;
+  length: number;
 }
 
 export interface YearGroup {
   year: number;
   posts: PostMeta[];
 }
+
+// Average reading speed in words per minute
+const WORDS_PER_MINUTE = 300;
 
 export function getAllPosts(): YearGroup[] {
   // Get all directories under src/app/post/
@@ -38,6 +42,12 @@ export function getAllPosts(): YearGroup[] {
     const metaString = `{${metaMatch[1]}}`;
     const meta = eval(`(${metaString})`);
 
+    // Calculate reading time
+    // Remove the meta portion from the content to count only the actual post body
+    const contentWithoutMeta = fileContents.replace(metaMatch[0], "").trim();
+    const wordCount = contentWithoutMeta.split(/\s+/).length;
+    const readingTime = Math.ceil(wordCount / WORDS_PER_MINUTE);
+
     return {
       slug: folder,
       date: meta.date as string,
@@ -45,6 +55,7 @@ export function getAllPosts(): YearGroup[] {
       description: meta.description as string,
       category: meta.category as string,
       image: meta.image as string,
+      length: readingTime, // Add reading time in minutes
       ...meta,
     };
   });
