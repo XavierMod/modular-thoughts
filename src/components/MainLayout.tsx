@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { ReactNode } from "react";
+import React, { ReactNode, useRef } from "react";
 import styled from "styled-components";
 import bgImage from "@/images/bg.png";
 import NavigationItems from "./NavBar/NavigationItems";
@@ -11,6 +11,8 @@ import Logo from "./NavBar/Logo";
 import { YearGroup } from "@/utils/posts";
 import { smallerThan } from "@/utils/mediaQueries";
 import ContentFooter from "@/components/ContentFooter";
+import DesktopOnlyScrollPercentage from "./DesktopOnlyScrollPercentage";
+import { usePathname } from "next/navigation";
 
 const Wrapper = styled.div`
   position: fixed;
@@ -111,6 +113,8 @@ type Props = {
 };
 
 const MainLayout = (props: Props) => {
+  const contentRef = useRef(null);
+  const pathname = usePathname();
   return (
     <Wrapper>
       <Container>
@@ -119,7 +123,12 @@ const MainLayout = (props: Props) => {
             <Logo />
           </div>
           <div>
-            <NavigationItems totalPosts={props.posts.length} />
+            <NavigationItems
+              totalPosts={
+                props.posts.flatMap((yearData: YearGroup) => yearData.posts)
+                  .length
+              }
+            />
           </div>
           <ArchivesWrapper>
             <Archives posts={props.posts} />
@@ -128,8 +137,11 @@ const MainLayout = (props: Props) => {
             <Footer />
           </div>
         </NavBar>
-        <Content>
-          <div style={{ maxWidth: 650 }}>{props.children}</div>
+        <Content ref={contentRef}>
+          <div style={{ maxWidth: 850 }}>{props.children}</div>
+          {pathname.includes("/post") ? (
+            <DesktopOnlyScrollPercentage container={contentRef} />
+          ) : null}
           <ContentFooter />
         </Content>
       </Container>
