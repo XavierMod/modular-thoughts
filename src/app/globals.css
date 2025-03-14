@@ -1,13 +1,6 @@
 :root {
-  --background: #ffffff;
-  --foreground: #181A1C;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 html,
@@ -17,7 +10,6 @@ body {
 }
 
 body {
-  color: var(--foreground);
   background: var(--background);
   font-family: var(--font-inter);
   -webkit-font-smoothing: antialiased;
@@ -29,12 +21,12 @@ body {
 p, li {
   font-family: var(--font-crimson);
   font-size: 1.3rem;
-    line-height: 2rem;
-
+  line-height: 2rem;
 }
 
 * {
   box-sizing: border-box;
+  color: var(--foreground);
 }
 
 a {
@@ -72,8 +64,3 @@ p {
   font-family: var(--font-londrina);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
