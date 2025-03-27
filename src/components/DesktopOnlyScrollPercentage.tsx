@@ -8,7 +8,7 @@ const Wrapper = styled.div<{ isHidden: boolean; scrollPercent: number }>`
   position: fixed;
   bottom: 0;
   right: 0;
-  background: rgb(58, 45, 59);
+  background: var(--desktop-percentage-background-color);
   color: white;
   border-radius: 50%;
   margin: 2rem;
@@ -19,11 +19,11 @@ const Wrapper = styled.div<{ isHidden: boolean; scrollPercent: number }>`
   justify-content: center;
   opacity: ${(props) => (props.isHidden ? `0` : `1`)};
   transition: all ease 0.3s;
-  border: 3px dashed rgba(255, 255, 255, 0.4);
+  border: 3px dashed var(--desktop-percentage-border);
 
   /* Create a circular border effect that fills up as scrollPercent increases */
   background-image: conic-gradient(
-    rgb(91, 64, 94) ${(props) => props.scrollPercent}%,
+    var(--desktop-percentage-fill-color) ${(props) => props.scrollPercent}%,
     transparent 0
   );
 

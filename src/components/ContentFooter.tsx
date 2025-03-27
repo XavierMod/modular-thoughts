@@ -3,10 +3,10 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  border: 3px solid #817490;
+  border: 3px solid var(--post-footer-border);
   padding: 2rem;
   border-radius: 0.5rem;
-  background: #423b4a;
+  background: var(--post-footer-background);
 
   a {
     opacity: 0.7;

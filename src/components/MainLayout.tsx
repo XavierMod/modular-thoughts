@@ -1,9 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import React, { ReactNode, useRef } from "react";
 import styled from "styled-components";
-import bgImage from "@/images/bg.png";
 import NavigationItems from "./NavBar/NavigationItems";
 import Archives from "./NavBar/Archives";
 import Footer from "./NavBar/Footer";
@@ -13,6 +11,7 @@ import { smallerThan } from "@/utils/mediaQueries";
 import ContentFooter from "@/components/ContentFooter";
 import DesktopOnlyScrollPercentage from "./DesktopOnlyScrollPercentage";
 import { usePathname } from "next/navigation";
+import ToggleMode from "./ToggleMode";
 
 const Wrapper = styled.div`
   position: fixed;
@@ -20,7 +19,7 @@ const Wrapper = styled.div`
   top: 0;
   width: 100%;
   left: 0;
-  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border: 2px dashed var(--border-layout-color);
 
   ${smallerThan.mobile`
     position: relative;
@@ -56,10 +55,11 @@ const Content = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: #181a1c;
+  background: var(--background-content);
   margin-top: 3rem;
-  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border: 2px dashed var(--border-layout-color);
   border-top-left-radius: 1rem;
+  border-right: 0;
   padding: 3rem;
   overflow-y: scroll;
   gap: 2rem;
@@ -117,6 +117,7 @@ const MainLayout = (props: Props) => {
   const pathname = usePathname();
   return (
     <Wrapper>
+      <ToggleMode />
       <Container>
         <NavBar>
           <div>
@@ -145,13 +146,6 @@ const MainLayout = (props: Props) => {
           <ContentFooter />
         </Content>
       </Container>
-      <Image
-        src={bgImage}
-        style={{ position: "absolute", left: 0, top: 0, zIndex: -1 }}
-        layout="fill"
-        objectFit="cover"
-        alt="Background image"
-      />
     </Wrapper>
   );
 };
