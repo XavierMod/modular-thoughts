@@ -6,32 +6,33 @@
   --logo-color: rgb(255, 255, 255);
   --border-layout-color: rgba(121, 97, 138, 0.5);
 
-  --desktop-percentage-background-color: rgb(58, 45, 59);
-  --desktop-percentage-border: rgba(255, 255, 255, 0.4);
-  --desktop-percentage-fill-color: rgb(91, 64, 94);
+  --desktop-percentage-background-color: rgb(98, 98, 99);
+  --desktop-percentage-border: rgba(255, 255, 255, 0.625);
+  --desktop-percentage-fill-color: rgb(0, 0, 0);
 
-  --post-footer-background: rgb(58, 45, 59);
+  --post-footer-background: rgb(0, 0, 0);
 
-  --toggle-background-color: rgb(73, 50, 82);
+  --toggle-background-color: rgb(100, 93, 112);
   --toggle-border-color: rgb(115, 115, 121);
+  --post-footer-border: #4c4c4c;
 }
 
 [data-theme="light"] {
-  --background: rgb(252, 251, 246); /* Light background */
-  --foreground: #161614; /* Dark foreground (text) */
-  --text-color: #5f4017;
-  --background-content: #f3efe5;
+  --background: rgb(243, 243, 243); /* Light background */
+  --foreground: #ffffff; /* Dark foreground (text) */
+  --text-color: #000000;
+  --background-content: #ffffff;
   --logo-color: #5c3b24;
-  --border-layout-color: #e9d9b0;
+  --border-layout-color: #ffffff;
 
-  --desktop-percentage-background-color: #f3efe5;
-  --desktop-percentage-border: #695012;
-  --desktop-percentage-fill-color: #e9d194;
+  --desktop-percentage-background-color: #ffffff;
+  --desktop-percentage-border: #000000;
+  --desktop-percentage-fill-color: rgb(233, 231, 250);
 
-  --post-footer-background: #e0d8c4;
-  --post-footer-border: #c5bba2;
+  --post-footer-background: #ffffff;
+  --post-footer-border: #e8e6e3;
 
-  --toggle-background-color: rgb(226, 226, 201);
+  --toggle-background-color: rgb(255, 255, 255);
   --toggle-border-color: rgb(248, 212, 145);
 }
 

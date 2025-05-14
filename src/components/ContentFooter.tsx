@@ -23,10 +23,7 @@ const ContentFooter = () => {
   return (
     <Wrapper>
       <p>
-        <strong
-          style={{ fontSize: 17 }}
-          className="font-tertiary"
-        >
+        <strong style={{ fontSize: 17 }} className="font-tertiary">
           MODULAR THOUGHTS
         </strong>{" "}
         is a blog on software, tech and philosophy written by{" "}

@@ -19,7 +19,6 @@ const Wrapper = styled.div`
   top: 0;
   width: 100%;
   left: 0;
-  border: 2px dashed var(--border-layout-color);
 
   ${smallerThan.mobile`
     position: relative;
@@ -63,6 +62,8 @@ const Content = styled.div`
   padding: 3rem;
   overflow-y: scroll;
   gap: 2rem;
+  border-left: 3px dashed rgba(255, 255, 255, 0.4);
+  border-top: 3px dashed rgba(255, 255, 255, 0.4);
 
   /* Hide scrollbar for Chrome, Safari and Opera */
   &::-webkit-scrollbar {

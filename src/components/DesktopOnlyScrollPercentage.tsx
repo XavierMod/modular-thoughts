@@ -70,10 +70,7 @@ const ScrollPercentage = (props: {
       isHidden={scrollPercent === 100 ? true : false}
       scrollPercent={scrollPercent}
     >
-      <span
-        className="font-secondary"
-        style={{ fontSize: 25 }}
-      >
+      <span className="font-secondary" style={{ fontSize: 25 }}>
         {scrollPercent}%
       </span>
     </Wrapper>

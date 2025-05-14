@@ -1,22 +1,23 @@
 import { useState, useEffect } from "react";
+import { FaLightbulb, FaMoon, FaSun } from "react-icons/fa";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  width: 60px;
-  height: 60px;
+
   text-align: center;
   position: fixed;
   top: 0;
   right: 0;
   margin: 0.5rem;
   cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 2rem;
 
   background: var(--toggle-background-color);
-  border: 2px dashed var(--toggle-border-color);
+
   z-index: 1;
 `;
 
@@ -38,7 +39,7 @@ const ToggleMode = () => {
 
   return (
     <a onClick={toggleTheme}>
-      <Wrapper>{theme === "light" ? "Night" : "Day"}</Wrapper>
+      <Wrapper>{theme === "light" ? <FaMoon /> : <FaLightbulb />}</Wrapper>
     </a>
   );
 };
