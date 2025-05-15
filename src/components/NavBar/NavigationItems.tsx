@@ -35,16 +35,11 @@ const NavigationItems = (props: { totalPosts: number }) => {
   return (
     <Wrapper>
       <ul>
-        <li
-          className={`font-secondary ${pathname === "/about" ? "active" : ""}`}
-        >
+        <li className={`font-primary ${pathname === "/about" ? "active" : ""}`}>
           <Link href="/about">about</Link>
         </li>
-        <li className="font-secondary">
-          <Link
-            target="_blank"
-            href="https://linktr.ee/xaviermod"
-          >
+        <li className="font-primary">
+          <Link target="_blank" href="https://linktr.ee/xaviermod">
             <div
               style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}
             >
@@ -53,11 +48,8 @@ const NavigationItems = (props: { totalPosts: number }) => {
             </div>
           </Link>
         </li>
-        <li className="font-secondary">
-          <Link
-            href="https://github.com/XavierMod"
-            target="_blank"
-          >
+        <li className="font-primary">
+          <Link href="https://github.com/XavierMod" target="_blank">
             <div
               style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}
             >
@@ -66,7 +58,7 @@ const NavigationItems = (props: { totalPosts: number }) => {
             </div>
           </Link>
         </li>
-        <li className={`font-secondary ${pathname === "/" ? "active" : ""}`}>
+        <li className={`font-primary ${pathname === "/" ? "active" : ""}`}>
           <Link href="/">archives [{props.totalPosts}]</Link>
         </li>
       </ul>

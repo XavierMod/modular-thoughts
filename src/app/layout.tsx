@@ -4,6 +4,7 @@ import {
   Pixelify_Sans,
   Londrina_Solid,
   Crimson_Pro,
+  Young_Serif,
 } from "next/font/google";
 import "./globals.css";
 import MainLayout from "@/components/MainLayout";
@@ -26,6 +27,13 @@ const crimson = Crimson_Pro({
 
 const pixelifySans = Pixelify_Sans({
   variable: "--font-pixelify",
+  subsets: ["latin"],
+});
+
+const youngSerif = Young_Serif({
+  variable: "--font-young-serif",
+  style: "normal",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -80,7 +88,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${pixelifySans.variable} ${londrinaSolid.variable} ${crimson.variable}`}
+        className={`${inter.variable} ${pixelifySans.variable} ${londrinaSolid.variable} ${crimson.variable} ${youngSerif.variable}`}
       >
         <StyledComponentsRegistry>
           <MainLayout posts={posts}>{children}</MainLayout>

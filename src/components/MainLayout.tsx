@@ -4,14 +4,12 @@ import React, { ReactNode, useRef } from "react";
 import styled from "styled-components";
 import NavigationItems from "./NavBar/NavigationItems";
 import Archives from "./NavBar/Archives";
-import Footer from "./NavBar/Footer";
 import Logo from "./NavBar/Logo";
 import { YearGroup } from "@/utils/posts";
 import { smallerThan } from "@/utils/mediaQueries";
 import ContentFooter from "@/components/ContentFooter";
 import DesktopOnlyScrollPercentage from "./DesktopOnlyScrollPercentage";
 import { usePathname } from "next/navigation";
-import ToggleMode from "./ToggleMode";
 
 const Wrapper = styled.div`
   position: fixed;
@@ -118,7 +116,6 @@ const MainLayout = (props: Props) => {
   const pathname = usePathname();
   return (
     <Wrapper>
-      <ToggleMode />
       <Container>
         <NavBar>
           <div>
@@ -135,9 +132,6 @@ const MainLayout = (props: Props) => {
           <ArchivesWrapper>
             <Archives posts={props.posts} />
           </ArchivesWrapper>
-          <div>
-            <Footer />
-          </div>
         </NavBar>
         <Content ref={contentRef}>
           <div style={{ maxWidth: 850 }}>{props.children}</div>

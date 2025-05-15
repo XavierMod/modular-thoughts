@@ -1,8 +1,8 @@
 :root {
-  --background: #1b181d;
+  --background: #000000;
   --foreground: #ededed;
   --text-color: #ffffff;
-  --background-content: #131014;
+  --background-content: #000000;
   --logo-color: rgb(255, 255, 255);
   --border-layout-color: rgba(121, 97, 138, 0.5);
 
@@ -15,25 +15,6 @@
   --toggle-background-color: rgb(100, 93, 112);
   --toggle-border-color: rgb(115, 115, 121);
   --post-footer-border: #4c4c4c;
-}
-
-[data-theme="light"] {
-  --background: rgb(243, 243, 243); /* Light background */
-  --foreground: #ffffff; /* Dark foreground (text) */
-  --text-color: #000000;
-  --background-content: #ffffff;
-  --logo-color: #5c3b24;
-  --border-layout-color: #ffffff;
-
-  --desktop-percentage-background-color: #ffffff;
-  --desktop-percentage-border: #000000;
-  --desktop-percentage-fill-color: rgb(233, 231, 250);
-
-  --post-footer-background: #ffffff;
-  --post-footer-border: #e8e6e3;
-
-  --toggle-background-color: rgb(255, 255, 255);
-  --toggle-border-color: rgb(248, 212, 145);
 }
 
 html,
@@ -54,7 +35,7 @@ body {
 p,
 li {
   font-family: var(--font-crimson);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   line-height: 2rem;
 }
 
@@ -69,20 +50,21 @@ a {
 }
 
 h1 {
-  font-family: var(--font-londrina);
-  font-weight: 700;
-  font-size: 3rem;
-  letter-spacing: 1.2px;
+  font-family: var(--font-young-serif);
+  font-weight: 500;
+  font-size: 2rem;
+  letter-spacing: -0.1rem;
   margin: 0;
+  line-height: 2.6rem;
 }
 
 h2,
 h3 {
   font-weight: bold;
-  font-family: var(--font-londrina);
-  font-size: 2.7rem;
+  font-family: var(--font-young-serif);
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: -0.1rem;
   line-height: 2.8rem;
   margin: 0;
 }
@@ -92,7 +74,7 @@ p {
 }
 
 .font-secondary {
-  font-family: var(--font-pixelify);
+  font-family: var(--font-young-serif);
 }
 
 .font-tertiary {
