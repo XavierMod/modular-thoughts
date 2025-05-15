@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FaLightbulb, FaMoon, FaSun } from "react-icons/fa";
+import { FaLightbulb, FaMoon } from "react-icons/fa";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
