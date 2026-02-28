@@ -3,10 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  border: 3px solid var(--post-footer-border);
-  padding: 2rem;
   border-radius: 0.5rem;
-  background: var(--post-footer-background);
 
   a {
     opacity: 0.7;
@@ -19,21 +16,19 @@ const Wrapper = styled.div`
 `;
 
 const ContentFooter = () => {
-  console.log("test");
   return (
     <Wrapper>
-      <p>
-        <strong style={{ fontSize: 17 }} className="font-tertiary">
-          MODULAR THOUGHTS
-        </strong>{" "}
-        is a blog on software, tech and philosophy written by{" "}
-        <Link href={"https://github.com/XavierMod"}>Xavier Mod</Link>. See an
-        issue? Let me know{" "}
-        <Link href={"https://github.com/XavierMod/modular-thoughts/issues/new"}>
-          here
-        </Link>
-        .
-      </p>
+      <span
+        style={{
+          fontSize: "1.4rem",
+          fontFamily: "var(--font-bitcount-grid-single)",
+          lineHeight: 2,
+        }}
+      >
+        <div>x</div>
+        Modular Thoughts is a blog on software, tech and philosophy written by{" "}
+        <Link href={"https://www.linkedin.com/in/xavier-mod/"}>Xavier Mod</Link>.{" "}
+      </span>
     </Wrapper>
   );
 };

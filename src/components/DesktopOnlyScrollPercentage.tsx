@@ -1,14 +1,13 @@
 "use client";
 
 import { smallerThan } from "@/utils/mediaQueries";
-import React, { useState, useEffect, RefObject } from "react";
+import React, { RefObject, useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div<{ isHidden: boolean; scrollPercent: number }>`
   position: fixed;
   bottom: 0;
   right: 0;
-  background: var(--desktop-percentage-background-color);
   color: white;
   border-radius: 50%;
   margin: 2rem;
@@ -19,11 +18,10 @@ const Wrapper = styled.div<{ isHidden: boolean; scrollPercent: number }>`
   justify-content: center;
   opacity: ${(props) => (props.isHidden ? `0` : `1`)};
   transition: all ease 0.3s;
-  border: 3px dashed var(--desktop-percentage-border);
 
   /* Create a circular border effect that fills up as scrollPercent increases */
   background-image: conic-gradient(
-    var(--desktop-percentage-fill-color) ${(props) => props.scrollPercent}%,
+    #2e2e36 ${(props) => props.scrollPercent}%,
     transparent 0
   );
 
@@ -70,7 +68,9 @@ const ScrollPercentage = (props: {
       isHidden={scrollPercent === 100 ? true : false}
       scrollPercent={scrollPercent}
     >
-      <span className="font-secondary" style={{ fontSize: 25 }}>
+      <span
+        style={{ fontSize: 35, fontFamily: "var(--font-bitcount-grid-single)" }}
+      >
         {scrollPercent}%
       </span>
     </Wrapper>

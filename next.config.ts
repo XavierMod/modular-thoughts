@@ -1,10 +1,7 @@
 import type { NextConfig } from "next";
-import remarkGfm from "remark-gfm";
-import withMDX from "@next/mdx";
-import rehypeHighlight from "rehype-highlight";
+import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   compiler: {
     styledComponents: true,
   },
@@ -16,14 +13,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"], // Add MDX file extensions
+  pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
 };
 
-// Wrap the config with the MDX plugin
-export default withMDX({
-  extension: /\.mdx?$/, // Recognize .mdx and optionally .md files
+const withMDX = createMDX({
   options: {
-    remarkPlugins: [remarkGfm], // Add remark plugins here if needed
-    rehypePlugins: [rehypeHighlight], // Add rehype plugins here if needed
+    remarkPlugins: ["remark-gfm"],
+    rehypePlugins: ["rehype-highlight"],
   },
-})(nextConfig);
+});
+
+export default withMDX(nextConfig);

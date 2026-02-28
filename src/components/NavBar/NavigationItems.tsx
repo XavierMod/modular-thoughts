@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   ul {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0rem;
   }
 
   li {
@@ -35,10 +35,10 @@ const NavigationItems = (props: { totalPosts: number }) => {
   return (
     <Wrapper>
       <ul>
-        <li className={`font-primary ${pathname === "/about" ? "active" : ""}`}>
+        <li className={`font-primary navbar-li ${pathname === "/about" ? "active" : ""}`}>
           <Link href="/about">about</Link>
         </li>
-        <li className="font-primary">
+        <li className="font-primary navbar-li">
           <Link target="_blank" href="https://linktr.ee/xaviermod">
             <div
               style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}
@@ -48,7 +48,7 @@ const NavigationItems = (props: { totalPosts: number }) => {
             </div>
           </Link>
         </li>
-        <li className="font-primary">
+        <li className="font-primary navbar-li">
           <Link href="https://github.com/XavierMod" target="_blank">
             <div
               style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}
@@ -58,7 +58,7 @@ const NavigationItems = (props: { totalPosts: number }) => {
             </div>
           </Link>
         </li>
-        <li className={`font-primary ${pathname === "/" ? "active" : ""}`}>
+        <li className={`font-primary navbar-li ${pathname === "/" ? "active" : ""}`}>
           <Link href="/">archives [{props.totalPosts}]</Link>
         </li>
       </ul>

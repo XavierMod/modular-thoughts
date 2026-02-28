@@ -1,45 +1,25 @@
-import type { Metadata } from "next";
-import {
-  Inter,
-  Pixelify_Sans,
-  Londrina_Solid,
-  Crimson_Pro,
-  Young_Serif,
-} from "next/font/google";
-import "./globals.css";
 import MainLayout from "@/components/MainLayout";
 import { getAllPosts } from "@/utils/posts";
-import "highlight.js/styles/qtcreator-dark.css";
 import StyledComponentsRegistry from "@/utils/registry";
-import ogImage from "./og-image.png";
+import "highlight.js/styles/qtcreator-dark.css";
+import type { Metadata } from "next";
+import { Libre_Baskerville, Bitcount_Grid_Single } from "next/font/google";
+import "./globals.css";
 import ogImageSquare from "./og-image-square.png";
+import ogImage from "./og-image.png";
+import HandDrawnLinks from "@/components/HandDrawnLinks";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const crimson = Crimson_Pro({
-  variable: "--font-crimson",
-  subsets: ["latin"],
-  weight: ["400", "700", "900"],
-});
-
-const pixelifySans = Pixelify_Sans({
-  variable: "--font-pixelify",
-  subsets: ["latin"],
-});
-
-const youngSerif = Young_Serif({
-  variable: "--font-young-serif",
+const libreBaskerville = Libre_Baskerville({
+  variable: "--font-baskerville",
   style: "normal",
   weight: "400",
   subsets: ["latin"],
 });
 
-const londrinaSolid = Londrina_Solid({
-  variable: "--font-londrina",
-  weight: "900",
+const bitcountGridSingle = Bitcount_Grid_Single({
+  variable: "--font-bitcount-grid-single",
+  style: "normal",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -87,10 +67,9 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${pixelifySans.variable} ${londrinaSolid.variable} ${crimson.variable} ${youngSerif.variable}`}
-      >
+      <body className={`${libreBaskerville.variable} ${bitcountGridSingle.variable}`}>
         <StyledComponentsRegistry>
+          <HandDrawnLinks />
           <MainLayout posts={posts}>{children}</MainLayout>
         </StyledComponentsRegistry>
       </body>

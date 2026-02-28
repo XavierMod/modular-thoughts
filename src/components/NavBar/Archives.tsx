@@ -48,7 +48,9 @@ const Archives = (props: { posts: YearGroup[] }) => {
       {props.posts.map((yearGroup: YearGroup, index) => {
         return (
           <div key={index}>
-            <span className="font-secondary">{yearGroup.year}</span>
+            <span style={{ fontFamily: "var(--font-bitcount-grid-single)", fontSize: 20 }}>
+              {yearGroup.year}/
+            </span>
             <ul>
               {yearGroup.posts.map((post: PostMeta) => {
                 return (
@@ -58,9 +60,7 @@ const Archives = (props: { posts: YearGroup[] }) => {
                     style={{ marginBottom: 15 }}
                   >
                     <li
-                      className={
-                        pathname === `/post/${post.slug}` ? "active" : ""
-                      }
+                      className={`navbar-li ${pathname === `/post/${post.slug}` ? "active" : ""}`}
                     >
                       {trimText(post.title)}
                     </li>

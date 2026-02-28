@@ -54,14 +54,11 @@ const Content = styled.div`
   flex-direction: column;
   background: var(--background-content);
   margin-top: 3rem;
-  border: 2px dashed var(--border-layout-color);
   border-top-left-radius: 1rem;
   border-right: 0;
   padding: 3rem;
   overflow-y: scroll;
   gap: 2rem;
-  border-left: 3px dashed rgba(255, 255, 255, 0.4);
-  border-top: 3px dashed rgba(255, 255, 255, 0.4);
 
   /* Hide scrollbar for Chrome, Safari and Opera */
   &::-webkit-scrollbar {
@@ -134,7 +131,7 @@ const MainLayout = (props: Props) => {
           </ArchivesWrapper>
         </NavBar>
         <Content ref={contentRef}>
-          <div style={{ maxWidth: 850 }}>{props.children}</div>
+          <div className="content" style={{ maxWidth: 850 }}>{props.children}</div>
           {pathname.includes("/post") ? (
             <DesktopOnlyScrollPercentage container={contentRef} />
           ) : null}

@@ -47,6 +47,8 @@ const Header = styled.div`
   opacity: 0.7;
   display: flex;
   gap: 1.5rem;
+  font-family: var(--font-bitcount-grid-single);
+  font-size: 20px;
 
   span {
     display: inline-block;
@@ -99,7 +101,6 @@ export default function Home() {
                 />
               </ImageWrapper>
               <p>{post.description}</p>
-              <ReadMoreButton />
             </Post>
           </Link>
         );
