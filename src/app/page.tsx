@@ -47,7 +47,7 @@ const Header = styled.div`
   display: flex;
   gap: 1.5rem;
   font-family: var(--font-bitcount-grid-single);
-  font-size: 20px;
+  font-size: 1.1rem;
 
   span {
     display: inline-block;
