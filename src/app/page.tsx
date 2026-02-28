@@ -1,6 +1,5 @@
 "use client";
 
-import ReadMoreButton from "@/components/ReadMoreButton";
 import { relativeTime } from "@/utils/lib";
 import { PostMeta, YearGroup } from "@/utils/posts";
 import Image from "next/image";
