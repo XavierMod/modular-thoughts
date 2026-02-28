@@ -20,7 +20,7 @@ const ContentFooter = () => {
     <Wrapper>
       <span
         style={{
-          fontSize: "1.4rem",
+          fontSize: "1rem",
           fontFamily: "var(--font-bitcount-grid-single)",
           lineHeight: 2,
         }}
@@ -28,6 +28,7 @@ const ContentFooter = () => {
         <div>x</div>
         Modular Thoughts is a blog on software, tech and philosophy written by{" "}
         <Link href={"https://www.linkedin.com/in/xavier-mod/"}>Xavier Mod</Link>.{" "}
+        I use AI to improve my writing and bounce off ideas. Words and thoughts are my own.
       </span>
     </Wrapper>
   );
