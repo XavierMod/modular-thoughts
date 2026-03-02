@@ -1,15 +1,15 @@
 "use client";
 
+import ContentFooter from "@/components/ContentFooter";
+import { smallerThan } from "@/utils/mediaQueries";
+import { YearGroup } from "@/utils/posts";
+import { usePathname } from "next/navigation";
 import React, { ReactNode, useRef } from "react";
 import styled from "styled-components";
-import NavigationItems from "./NavBar/NavigationItems";
+import DesktopOnlyScrollPercentage from "./DesktopOnlyScrollPercentage";
 import Archives from "./NavBar/Archives";
 import Logo from "./NavBar/Logo";
-import { YearGroup } from "@/utils/posts";
-import { smallerThan } from "@/utils/mediaQueries";
-import ContentFooter from "@/components/ContentFooter";
-import DesktopOnlyScrollPercentage from "./DesktopOnlyScrollPercentage";
-import { usePathname } from "next/navigation";
+import NavigationItems from "./NavBar/NavigationItems";
 
 const Wrapper = styled.div`
   position: fixed;
@@ -131,7 +131,9 @@ const MainLayout = (props: Props) => {
           </ArchivesWrapper>
         </NavBar>
         <Content ref={contentRef}>
-          <div className="content" style={{ maxWidth: 850 }}>{props.children}</div>
+          <div className="content" style={{ maxWidth: 850 }}>
+            {props.children}
+          </div>
           {pathname.includes("/post") ? (
             <DesktopOnlyScrollPercentage container={contentRef} />
           ) : null}

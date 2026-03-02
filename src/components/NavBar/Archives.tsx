@@ -24,7 +24,7 @@ const Wrapper = styled.div`
     li {
       max-width: 250px;
       opacity: 0.5;
-      font-size: 1.1rem;
+      font-size: 1rem;
       line-height: 1.5rem;
       margin-left: 1rem;
 
